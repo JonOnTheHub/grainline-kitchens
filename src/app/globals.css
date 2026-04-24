@@ -1,26 +1,114 @@
-@import "tailwindcss";
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-space-grotesk: "";
+    --font-work-sans: "";
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #f5f2ed;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5f2ed;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #111111;
+  }
+
+  /* Image default */
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Remove button defaults */
+  button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+  }
+
+  /* Input reset */
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    background: transparent;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .border-ink {
+    border-color: #111111;
+  }
+  .text-ink {
+    color: #111111;
+  }
+  .text-ink-muted {
+    color: rgba(17, 17, 17, 0.55);
+  }
+  .text-ink-faint {
+    color: rgba(17, 17, 17, 0.25);
+  }
+  .bg-base {
+    background-color: #f5f2ed;
+  }
+
+  /* Grayscale image treatment — colour on hover */
+  .img-reveal {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+  }
+  .img-reveal:hover {
+    filter: grayscale(0%);
+  }
+
+  /* Ochre tint overlay */
+  .img-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(200, 149, 58, 0.06);
+    pointer-events: none;
+  }
+
+  /* Hard rule divider (1px ink) */
+  .rule {
+    border-color: #111111;
+  }
+
+  /* Uppercase label */
+  .label {
+    font-family: var(--font-work-sans), sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(17, 17, 17, 0.55);
+  }
 }
