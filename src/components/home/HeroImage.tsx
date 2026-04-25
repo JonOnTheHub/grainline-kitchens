@@ -1,11 +1,14 @@
 import Image from "next/image";
 
+const HERO_URL =
+  "https://yciprniwhgktibczuyql.supabase.co/storage/v1/object/public/kitchen-images/the-burford/Buford,%20Hero.jpeg";
+
 export default function HeroImage() {
   return (
     <section className="border-b border-ink relative overflow-hidden h-[50vw] max-h-[680px] min-h-[320px]">
       <Image
-        src="https://picsum.photos/seed/grainline-hero/1600/900"
-        alt="Grainline kitchen installation"
+        src={HERO_URL}
+        alt="The Burford — Grainline Kitchens"
         fill
         className="object-cover grayscale brightness-90"
         priority

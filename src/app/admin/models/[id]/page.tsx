@@ -1,17 +1,18 @@
-import { notFound }     from "next/navigation";
+import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { KitchenModel } from "@/lib/types";
-import ModelForm        from "@/components/admin/ModelForm";
+import ModelForm from "@/components/admin/ModelForm";
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
 export default async function EditModelPage({ params }: Props) {
+  const { id } = await params;
   const supabase = await createClient();
 
   const { data } = await supabase
     .from("kitchen_models")
     .select("*")
-    .eq("id", params.id)
+    .eq("id", id)
     .single();
 
   if (!data) notFound();

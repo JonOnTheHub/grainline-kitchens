@@ -70,10 +70,11 @@ const FALLBACK: KitchenModel[] = [
   },
 ];
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props) {
-  const model = FALLBACK.find((m) => m.slug === params.slug);
+  const { slug } = await params;
+  const model = FALLBACK.find((m) => m.slug === slug);
   return {
     title: model ? `${model.name} — Grainline Kitchens` : "Kitchen Model",
     description: model?.description ?? "",
@@ -81,15 +82,16 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function ProductPage({ params }: Props) {
+  const { slug } = await params;
   const supabase = await createClient();
 
   const { data } = await supabase
     .from("kitchen_models")
     .select("*")
-    .eq("slug", params.slug)
+    .eq("slug", slug)
     .single();
 
-  const model = (data as KitchenModel) ?? FALLBACK.find((m) => m.slug === params.slug);
+  const model = (data as KitchenModel) ?? FALLBACK.find((m) => m.slug === slug);
 
   if (!model) notFound();
 
