@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
           </div>
           <p className="font-mono text-[0.65rem] uppercase tracking-widest text-ink-muted">
-            © 2024 GRAINLINE KITCHENS LTD.
+            © 2026 GRAINLINE KITCHENS LTD.
           </p>
         </div>
 
