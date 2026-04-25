@@ -1,8 +1,8 @@
 const stats = [
-  { num: "2,400+", label: "KITCHENS INSTALLED" },
+  { num: "140+", label: "KITCHENS INSTALLED" },
   { num: "98.3%",  label: "SATISFACTION RATE"  },
   { num: "10 YR",  label: "STRUCTURAL WARRANTY" },
-  { num: "6–8 WK", label: "AVG LEAD TIME"       },
+  { num: "6–8 WKS", label: "AVG LEAD TIME"       },
 ];
 
 export default function StatsBand() {
