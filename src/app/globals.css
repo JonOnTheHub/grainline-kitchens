@@ -1,9 +1,11 @@
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --font-space-grotesk: "";
-    --font-work-sans: "";
+    --font-space-grotesk: '';
+    --font-work-sans: '';
   }
 
   * {
@@ -17,7 +19,7 @@
   }
 
   body {
-    background-color: #f5f2ed;
+    background-color: #F5F2ED;
     color: #111111;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -25,34 +27,18 @@
   }
 
   /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 3px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f5f2ed;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #111111;
-  }
+  ::-webkit-scrollbar       { width: 3px; }
+  ::-webkit-scrollbar-track { background: #F5F2ED; }
+  ::-webkit-scrollbar-thumb { background: #111111; }
 
   /* Image default */
-  img {
-    display: block;
-    max-width: 100%;
-  }
+  img { display: block; max-width: 100%; }
 
   /* Remove button defaults */
-  button {
-    cursor: pointer;
-    font-family: inherit;
-    border: none;
-    background: none;
-  }
+  button { cursor: pointer; font-family: inherit; border: none; background: none; }
 
   /* Input reset */
-  input,
-  textarea,
-  select {
+  input, textarea, select {
     font-family: inherit;
     background: transparent;
     outline: none;
@@ -63,30 +49,18 @@
 }
 
 @layer utilities {
-  .border-ink {
-    border-color: #111111;
-  }
-  .text-ink {
-    color: #111111;
-  }
-  .text-ink-muted {
-    color: rgba(17, 17, 17, 0.55);
-  }
-  .text-ink-faint {
-    color: rgba(17, 17, 17, 0.25);
-  }
-  .bg-base {
-    background-color: #f5f2ed;
-  }
+  .border-ink       { border-color: #111111; }
+  .text-ink         { color: #111111; }
+  .text-ink-muted   { color: rgba(17,17,17,0.55); }
+  .text-ink-faint   { color: rgba(17,17,17,0.25); }
+  .bg-base          { background-color: #F5F2ED; }
 
   /* Grayscale image treatment — colour on hover */
   .img-reveal {
     filter: grayscale(100%);
     transition: filter 0.4s ease;
   }
-  .img-reveal:hover {
-    filter: grayscale(0%);
-  }
+  .img-reveal:hover { filter: grayscale(0%); }
 
   /* Ochre tint overlay */
   .img-overlay::after {
@@ -98,9 +72,7 @@
   }
 
   /* Hard rule divider (1px ink) */
-  .rule {
-    border-color: #111111;
-  }
+  .rule { border-color: #111111; }
 
   /* Uppercase label */
   .label {
@@ -109,6 +81,6 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(17, 17, 17, 0.55);
+    color: rgba(17,17,17,0.55);
   }
 }
