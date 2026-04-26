@@ -1,11 +1,11 @@
-import Link          from "next/link";
+import Link from "next/link";
 import { KitchenModel } from "@/lib/types";
 
 type Props = { model: KitchenModel };
 
 export default function ProductHero({ model }: Props) {
   return (
-    <section className="pt-nav border-b border-ink">
+    <section className="md:pt-nav border-b border-ink">
       {/* Breadcrumb */}
       <div className="px-6 md:px-8 py-4 border-b border-ink">
         <p className="font-mono text-data-sm uppercase tracking-widest text-ink-muted">
@@ -34,12 +34,12 @@ export default function ProductHero({ model }: Props) {
         <div className="md:col-span-4 px-6 md:px-8 py-12 md:py-16 flex flex-col justify-between gap-8">
           <div className="space-y-3">
             {[
-              { k: "SERIES",   v: `SERIES ${model.series}`         },
-              { k: "FINISH",   v: model.finish.toUpperCase()        },
-              { k: "CURRENCY", v: model.currency                    },
-              { k: "FROM",     v: `£${model.price_from.toLocaleString()}` },
-              { k: "WARRANTY", v: "10 YEARS"                        },
-              { k: "LEAD TIME",v: "6–8 WEEKS"                       },
+              { k: "SERIES", v: `SERIES ${model.series}` },
+              { k: "FINISH", v: model.finish.toUpperCase() },
+              { k: "CURRENCY", v: model.currency },
+              { k: "FROM", v: `£${model.price_from.toLocaleString()}` },
+              { k: "WARRANTY", v: "10 YEARS" },
+              { k: "LEAD TIME", v: "6–8 WEEKS" },
             ].map(({ k, v }) => (
               <div
                 key={k}

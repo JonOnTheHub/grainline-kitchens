@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="pt-nav border-b border-ink">
+    <section className="md:pt-nav border-b border-ink">
       {/* ── Headline row ─────────────────────────────────────────── */}
       <div className="grid grid-cols-1 md:grid-cols-12 border-b border-ink">
         {/* Large headline */}
