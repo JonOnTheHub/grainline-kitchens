@@ -6,7 +6,7 @@ export default function Hero() {
       {/* ── Headline row ─────────────────────────────────────────── */}
       <div className="grid grid-cols-1 md:grid-cols-12 border-b border-ink">
         {/* Large headline */}
-        <div className="md:col-span-8 px-6 md:px-8 py-12 md:py-16 border-b md:border-b-0 md:border-r border-ink">
+        <div className="md:col-span-8 pl-2 md:px-8 py-10 md:py-16 border-b md:border-b-0 md:border-r border-ink">
           <p className="label mb-6">MODULAR RTA KITCHENS — EST. 2024</p>
           <h1 className="font-display font-black uppercase leading-[0.88] tracking-[-0.04em] text-display-2xl">
             SYSTEMS<br />FOR<br />PERMANENCE
