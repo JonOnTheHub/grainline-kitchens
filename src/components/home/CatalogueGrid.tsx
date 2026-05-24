@@ -4,9 +4,9 @@ import Image from "next/image";
 
 // Seed images — replace with real Supabase URLs
 const SEED_IMAGES = [
-    "https://picsum.photos/seed/kitchen-a/800/900",
-    "https://picsum.photos/seed/kitchen-b/800/900",
-    "https://picsum.photos/seed/kitchen-c/800/900",
+    "/images/the-arden/arden-catalogue.jpeg",
+    "/images/the-burford/buford-full-kitchen.jpeg",
+    "/images/the-langford/langford-catalogue.jpeg",
 ];
 
 type Props = { models: KitchenModel[] };

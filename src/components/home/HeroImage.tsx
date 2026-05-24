@@ -5,7 +5,7 @@ export default function HeroImage() {
   return (
     <section className="border-b border-ink relative overflow-hidden h-[50vw] max-h-[680px] min-h-[320px]">
       <Image
-        src="public/images/the-burford/Buford, Hero.jpeg"
+        src="/images/the-burford/buford-hero.jpeg"
         alt="The Burford — Grainline Kitchens"
         fill
         className="object-cover grayscale brightness-90"

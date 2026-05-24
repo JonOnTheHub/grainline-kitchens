@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     "Precision-built modular RTA kitchens. Structural honesty and functional beauty for residential and commercial spaces.",
   keywords: ["modular kitchens", "RTA kitchens", "kitchen design", "fitted kitchens"],
   openGraph: {
-    title:       "Grainline Kitchens",
+    title: "Grainline Kitchens",
     description: "Precision-built modular RTA kitchens.",
-    type:        "website",
-    locale:      "en_GB",
+    type: "website",
+    locale: "en_GB",
   },
 };
 

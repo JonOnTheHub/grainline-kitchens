@@ -1,12 +1,12 @@
-import Image            from "next/image";
+import Image from "next/image";
 import { KitchenModel } from "@/lib/types";
 
 type Props = { model: KitchenModel };
 
 const SEED = [
-  "https://picsum.photos/seed/gal-a/800/900",
-  "https://picsum.photos/seed/gal-b/800/900",
-  "https://picsum.photos/seed/gal-c/800/900",
+  "/images/the-arden/arden-catalogue.jpeg",
+  "/images/the-burford/buford-catalogue.jpeg",
+  "/images/the-langford/langford-catalogue.jpeg",
 ];
 
 export default function ProductGallery({ model }: Props) {
