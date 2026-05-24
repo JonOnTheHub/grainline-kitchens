@@ -34,7 +34,7 @@
 
   /* Scrollbar */
   ::-webkit-scrollbar       { width: 3px; }
-  ::-webkit-scrollbar-track { background: #F5F2ED; }
+  ::-webkit-scrollbar-track { background: #f5f2ed; }
   ::-webkit-scrollbar-thumb { background: #111111; }
 
   /* Image default */

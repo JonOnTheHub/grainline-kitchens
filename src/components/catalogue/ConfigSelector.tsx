@@ -16,7 +16,7 @@ export default function ConfigSelector({ model }: Props) {
 
   return (
     <section className="border-b border-ink">
-      {/* Header */}
+      {/* header */}
       <div className="px-6 md:px-8 py-6 border-b border-ink">
         <p className="label text-ink-muted">CONFIGURE YOUR SPECIFICATION</p>
       </div>

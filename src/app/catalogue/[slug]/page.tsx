@@ -1,13 +1,13 @@
-import { notFound }      from "next/navigation";
-import { createClient }  from "@/lib/supabase/server";
-import { KitchenModel }  from "@/lib/types";
-import Navbar            from "@/components/nav/Navbar";
-import Footer            from "@/components/ui/Footer";
-import ProductHero       from "@/components/catalogue/ProductHero";
-import ProductGallery    from "@/components/catalogue/ProductGallery";
-import ProductDetails    from "@/components/catalogue/ProductDetails";
-import ConfigSelector    from "@/components/catalogue/ConfigSelector";
-import SpecsTable        from "@/components/catalogue/SpecsTable";
+import { notFound } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { KitchenModel } from "@/lib/types";
+import Navbar from "@/components/nav/Navbar";
+import Footer from "@/components/ui/Footer";
+import ProductHero from "@/components/catalogue/ProductHero";
+import ProductGallery from "@/components/catalogue/ProductGallery";
+import ProductDetails from "@/components/catalogue/ProductDetails";
+import ConfigSelector from "@/components/catalogue/ConfigSelector";
+import SpecsTable from "@/components/catalogue/SpecsTable";
 
 // Fallback for dev — remove once DB is seeded
 const FALLBACK: KitchenModel[] = [
@@ -18,15 +18,15 @@ const FALLBACK: KitchenModel[] = [
     philosophy: "Structural honesty and functional beauty. The BURFORD is an exercise in restraint — every joint is exposed, every line serves a structural purpose. Engineered for architectural permanence using solid-core timber and precision-milled hardware.",
     price_from: 14200, currency: "GBP",
     specs: [
-      { component: "BASE MODULE",    dimension: "600W × 870H × 600D", material: "RAW OAK / PLY",    tolerance: "+0.5MM" },
-      { component: "WORKTOP",        dimension: "3000W × 40T × 650D", material: "STAINLESS STEEL",  tolerance: "+0.1MM" },
-      { component: "DRAWER RUNNERS", dimension: "450L / 550L",        material: "BLUM MOVENTO",     tolerance: "STRESS TESTED" },
-      { component: "PLINTH",         dimension: "VARIES × 100H",      material: "ANODISED ALU",     tolerance: "+1.0MM" },
+      { component: "BASE MODULE", dimension: "600W × 870H × 600D", material: "RAW OAK / PLY", tolerance: "+0.5MM" },
+      { component: "WORKTOP", dimension: "3000W × 40T × 650D", material: "STAINLESS STEEL", tolerance: "+0.1MM" },
+      { component: "DRAWER RUNNERS", dimension: "450L / 550L", material: "BLUM MOVENTO", tolerance: "STRESS TESTED" },
+      { component: "PLINTH", dimension: "VARIES × 100H", material: "ANODISED ALU", tolerance: "+1.0MM" },
     ],
     images: [
-      "https://picsum.photos/seed/burford-a/800/900",
-      "https://picsum.photos/seed/burford-b/800/900",
-      "https://picsum.photos/seed/burford-c/800/900",
+      "public/images/the-burford/Buford, Full Kitchen.jpeg",
+      "public/images/the-burford/Buford, Close Up.jpeg",
+      "public/images/the-burford/Buford, Island.jpeg",
     ],
     is_featured: true, created_at: "",
   },
@@ -37,15 +37,15 @@ const FALLBACK: KitchenModel[] = [
     philosophy: "The ARDEN series draws from mid-century workshop culture — tools visible, process honest. Walnut carcasses are matched for grain direction across every door front. Nothing is hidden.",
     price_from: 12800, currency: "GBP",
     specs: [
-      { component: "BASE MODULE",    dimension: "600W × 870H × 600D", material: "WALNUT / PLY",     tolerance: "+0.5MM" },
-      { component: "WORKTOP",        dimension: "3000W × 38T × 650D", material: "SOLID WALNUT",     tolerance: "+0.2MM" },
-      { component: "DRAWER RUNNERS", dimension: "450L / 550L",        material: "BLUM MOVENTO",     tolerance: "STRESS TESTED" },
-      { component: "PLINTH",         dimension: "VARIES × 100H",      material: "OILED OAK",        tolerance: "+1.0MM" },
+      { component: "BASE MODULE", dimension: "600W × 870H × 600D", material: "WALNUT / PLY", tolerance: "+0.5MM" },
+      { component: "WORKTOP", dimension: "3000W × 38T × 650D", material: "SOLID WALNUT", tolerance: "+0.2MM" },
+      { component: "DRAWER RUNNERS", dimension: "450L / 550L", material: "BLUM MOVENTO", tolerance: "STRESS TESTED" },
+      { component: "PLINTH", dimension: "VARIES × 100H", material: "OILED OAK", tolerance: "+1.0MM" },
     ],
     images: [
-      "https://picsum.photos/seed/arden-a/800/900",
-      "https://picsum.photos/seed/arden-b/800/900",
-      "https://picsum.photos/seed/arden-c/800/900",
+      "public/images/the-arden/Arden, Catalogue.jpeg",
+      "public/images/the-arden/Arden, Close Up.jpeg",
+      "public/images/the-arden/Arden, Corner.jpeg",
     ],
     is_featured: false, created_at: "",
   },
@@ -56,15 +56,15 @@ const FALLBACK: KitchenModel[] = [
     philosophy: "The LANGFORD is our most specified collection. Deep pigment painted shaker fronts on a solid MDF core — available in 14 custom colours. The island unit is designed to anchor the room, not hide in it.",
     price_from: 15500, currency: "GBP",
     specs: [
-      { component: "BASE MODULE",    dimension: "600W × 870H × 600D", material: "MDF / PLY",        tolerance: "+0.5MM" },
-      { component: "WORKTOP",        dimension: "3000W × 40T × 650D", material: "HONED GRANITE",    tolerance: "+0.3MM" },
-      { component: "DRAWER RUNNERS", dimension: "450L / 550L",        material: "BLUM MOVENTO",     tolerance: "STRESS TESTED" },
-      { component: "PLINTH",         dimension: "VARIES × 100H",      material: "PAINTED MDF",      tolerance: "+1.0MM" },
+      { component: "BASE MODULE", dimension: "600W × 870H × 600D", material: "MDF / PLY", tolerance: "+0.5MM" },
+      { component: "WORKTOP", dimension: "3000W × 40T × 650D", material: "HONED GRANITE", tolerance: "+0.3MM" },
+      { component: "DRAWER RUNNERS", dimension: "450L / 550L", material: "BLUM MOVENTO", tolerance: "STRESS TESTED" },
+      { component: "PLINTH", dimension: "VARIES × 100H", material: "PAINTED MDF", tolerance: "+1.0MM" },
     ],
     images: [
-      "https://picsum.photos/seed/langford-a/800/900",
-      "https://picsum.photos/seed/langford-b/800/900",
-      "https://picsum.photos/seed/langford-c/800/900",
+      "public/images/the-langford/Langford, Catalogue.jpeg",
+      "public/images/the-langford/Langford, Close Up.jpeg",
+      "public/images/the-langford/Langford, Bird's Eye.jpeg",
     ],
     is_featured: false, created_at: "",
   },
@@ -99,11 +99,11 @@ export default async function ProductPage({ params }: Props) {
     <>
       <Navbar />
       <main>
-        <ProductHero    model={model} />
+        <ProductHero model={model} />
         <ProductGallery model={model} />
         <ProductDetails model={model} />
         <ConfigSelector model={model} />
-        <SpecsTable     model={model} />
+        <SpecsTable model={model} />
       </main>
       <Footer />
     </>
